@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="" id="form">
+        <input type="text" name="screen" id="screen" ><br><br>
+        <input type="button" name="one" id="one"  value="1" onclick="one_1()">&nbsp; 
+        <input type="button" name="two" id="two"  value="2" onclick="two_2()">&nbsp; 
+        <input type="button" name="three" id="three"  value="3" onclick="three_3()">&nbsp; 
+        <input type="button" name="del" id="del"  value="Del" onclick="deleteLast()">&nbsp; 
+        <input type="button" name="ac" id="ac"  value="AC" onclick="clearScreen()">&nbsp; <br><br>
+        <input type="button" name="four" id="four"  value="4" onclick="four_4()">&nbsp; 
+        <input type="button" name="five" id="five"  value="5" onclick="five_5()">&nbsp; 
+        <input type="button" name="six" id="six"  value="6" onclick="six_6()">&nbsp;
+        <input type="button" name="multiply" id="multiply"  value="*" onclick="multiply1()">&nbsp; 
+        <input type="button" name="divide" id="divide"  value="/" onclick="division1()">&nbsp;  <br><br>
+        <input type="button" name="seven" id="seven"  value="7" onclick="seven_7()">&nbsp; 
+        <input type="button" name="eight" id="eight"  value="8" onclick="eight_8()">&nbsp; 
+        <input type="button" name="nine" id="nine"  value="9" onclick="nine_9()">&nbsp;
+        <input type="button" name="add" id="add"  value="+" onclick="addition1()">&nbsp; 
+        <input type="button" name="sub" id="sub"  value="-" onclick="subtraction1()">&nbsp;  <br><br>
+        <input type="button" name="zero" id="zero"  value="0" onclick="zero_0()">&nbsp; 
+        <input type="button" name="dot" id="dot"  value="." onclick="dot_1()">&nbsp; 
+        <input type="button" name="answer" id="answer"  value="ANS" onclick="appendValue(value) ">&nbsp; 
+        <input type="button" name="ans" id="ans"  value="=" onclick="calculateResult()">&nbsp;  <br><br>
+        <script>
+            
+        function one_1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('one').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function two_2() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('two').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function three_3() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('three').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function four_4() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('four').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function five_5() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('five').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function six_6() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('six').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function seven_7() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('seven').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function eight_8() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('eight').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function nine_9() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('nine').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function zero_0() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('zero').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function dot_1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('dot').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function multiply1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('multiply').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function division1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('divide').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function addition1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('add').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function subtraction1() {
+            var screenValue = document.getElementById('screen').value;
+            screenValue += document.getElementById('sub').value;
+            document.getElementById('screen').value = screenValue;
+        }
+        function deleteLast() {
+            let screen = document.getElementById('screen');
+            screen.value = screen.value.slice(0, -1);
+        }
+        function clearScreen() {
+            document.getElementById('screen').value = "";
+        }
+        function calculateResult() {
+            let screen = document.getElementById('screen');
+            try {
+                screen.value = eval(screen.value); 
+            } catch (error) {
+                screen.value = "Error"; 
+            }
+        }
+        function appendValue(value) {
+            document.getElementById('screen').value += value;
+        }
+        </script>
+        <style>
+            
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #screen {
+            width: 100%;
+            height: 50px;
+            font-size: 1.5em;
+            text-align: right;
+            border: none;
+            outline: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f0f0f0;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            gap: 10px;
+            justify-content: center;
+        }
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #e0e0e0;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #d6d6d6;
+        }
+        .operator {
+            background: #ff9f00;
+            color: white;
+        }
+        .operator:hover {
+            background: #e68a00;
+        }
+        .equal {
+            background: #00c853;
+            color: white;
+        }
+        .equal:hover {
+            background: #00b347;
+        }
+        .clear {
+            background: #ff3d00;
+            color: white;
+        }
+        .clear:hover {
+            background: #d32f2f;
+        }
+        </style>
+    </form>
+    </body>
+</html>
